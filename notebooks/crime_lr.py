@@ -84,7 +84,7 @@ sns.heatmap(corr, annot=True, cmap='coolwarm')
 plt.title('Correlation Matrix')
 plt.show()
 
-# perform diagnostics to check the standard assumptions of linear regression
+# perform analysis to check the standard assumptions of linear regression
 
 # 1. Linearity
 sns.pairplot(df[['murder_rate', 'poverty', 'high_school', 'single_parent', 'unemployed', 'metropolitan']])

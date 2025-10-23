@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
@@ -27,18 +25,12 @@ print(df.info())
 # (replace dots and spaces with underscores)
 df.rename(columns=lambda c: c.replace('.', '_').replace(' ', '_'), inplace=True)
 
-# Define features and target variable (use new name murder_rate)
-X = df.drop('murder_rate', axis=1)
-y = df['murder_rate']
-
 # create a linear regression model
-model = LinearRegression()
-
-# fit the model
-model.fit(X, y)
+model = ols('murder_rate ~ poverty + high_school + college + single_parent + unemployed + metropolitan', data=df).fit()
+print(model.summary())
 
 # print the R^2 score
-print(f"Model R^2 score (sklearn): {model.score(X, y):.4f}")
+print(f"Model R^2 score (sklearn): {model.rsquared:.4f}")
 
 # fit the full model
 full_model = ols('murder_rate ~ poverty + high_school + college + single_parent + unemployed + metropolitan', data=df).fit()

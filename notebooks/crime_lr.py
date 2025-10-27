@@ -68,7 +68,7 @@ best_model = ols('murder_rate ~ poverty + high_school + single_parent + unemploy
 print(best_model.summary())
 
 # print the R^2 score for the best model
-print(f"Model R^2 score (statsmodels): {best_model.rsquared:.4f}")
+print(f"Model R^2 score: {best_model.rsquared:.4f}")
 
 # test for correlation between predictors
 corr = df[['poverty', 'high_school', 'single_parent', 'unemployed', 'metropolitan']].corr()

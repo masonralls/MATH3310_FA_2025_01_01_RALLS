@@ -71,7 +71,7 @@ plt.show()
 
 # Cross-validation on raw X/y (the pipeline handles transforms inside each fold)
 kf = KFold(n_splits=5, shuffle=True, random_state=42)
-scores = cross_val_score(pipe, X, y, cv=kf, scoring='r2')
+scores = cross_val_score(pipe, X_train, y_train, cv=kf, scoring='r2')
 print("CV R² per fold:", scores)
 print("Mean R²:", scores.mean())
 print("Std dev:", scores.std())

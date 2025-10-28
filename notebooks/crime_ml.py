@@ -15,6 +15,9 @@ from sklearn.metrics import r2_score
 path = "C:\\Users\\mason\\OneDrive\\Desktop\\MATH_3310\\project_1_crime\\MATH3310_FA_2025_01_01_RALLS\\data\\raw\\crime.csv"
 df = pd.read_csv(path)
 
+# Check for missing values
+print(df.isnull().sum())
+
 # Normalize column names so they are valid Python identifiers for patsy
 # (replace dots and spaces with underscores)
 df.rename(columns=lambda c: c.replace('.', '_').replace(' ', '_'), inplace=True)
@@ -32,12 +35,10 @@ categorical_features = [c for c in X.columns if c not in numeric_features]
 
 # --- Preprocessing ---
 numeric_pipe = Pipeline([
-    ('imputer', SimpleImputer(strategy='mean')),
     ('scaler', StandardScaler())
 ])
 
 categorical_pipe = Pipeline([
-    ('imputer', SimpleImputer(strategy='most_frequent')),
     ('ohe', OneHotEncoder(handle_unknown='ignore', drop='first', sparse_output=False))
 ])
 

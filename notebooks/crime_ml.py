@@ -33,6 +33,9 @@ numeric_features = selector(dtype_include=np.number)(X)
 # If 'region' is the only categorical, we can also do: categorical_features = ['region']
 categorical_features = [c for c in X.columns if c not in numeric_features]
 
+print(numeric_features)
+print(categorical_features)
+
 # --- Preprocessing ---
 numeric_pipe = Pipeline([
     ('scaler', StandardScaler())
@@ -58,7 +61,7 @@ pipe
 # Train/test split for
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Fit on training data only
+# Fit pipeline on training data only
 pipe.fit(X_train, y_train)
 
 # Predict and plot
@@ -74,7 +77,7 @@ plt.show()
 
 # Cross-validation on raw X/y (the pipeline handles transforms inside each fold)
 kf = KFold(n_splits=5, shuffle=True, random_state=42)
-scores = cross_val_score(pipe, X_train, y_train, cv=kf, scoring='r2')
+scores = cross_val_score(pipe, X, y, cv=kf, scoring='r2')
 print("CV R² per fold:", scores)
 print("Mean R²:", scores.mean())
 print("Std dev:", scores.std())

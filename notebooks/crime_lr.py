@@ -68,6 +68,12 @@ print(best_model.summary())
 # print the R^2 score for the best model
 print(f"Model R^2 score: {best_model.rsquared:.4f}")
 
+#calculate adjusted R^2
+n = df.shape[0]  # number of samples
+p = 5  # number of predictors in best_model (poverty, high_school, single_parent, unemployed, metropolitan)
+adj_r2 = 1 - (1 - best_model.rsquared) * (n - 1) / (n - p - 1)
+print(f"Model Adjusted R^2 score: {adj_r2:.4f}")
+
 # test for correlation between predictors
 corr = df[[ 'poverty', 'high_school', 'single_parent', 'unemployed', 'metropolitan']].corr()
 sns.heatmap(corr, annot=True, cmap='coolwarm')

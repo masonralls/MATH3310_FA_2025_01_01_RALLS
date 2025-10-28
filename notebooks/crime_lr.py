@@ -5,8 +5,6 @@ import seaborn as sns
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
-from statsmodels.stats.outliers_influence import variance_inflation_factor
-
 
 # load the dataset
 path = "C:\\Users\\mason\\OneDrive\\Desktop\\MATH_3310\\project_1_crime\\MATH3310_FA_2025_01_01_RALLS\\data\\raw\\crime.csv"
@@ -71,7 +69,7 @@ print(best_model.summary())
 print(f"Model R^2 score: {best_model.rsquared:.4f}")
 
 # test for correlation between predictors
-corr = df[['poverty', 'high_school', 'single_parent', 'unemployed', 'metropolitan']].corr()
+corr = df[[ 'poverty', 'high_school', 'single_parent', 'unemployed', 'metropolitan']].corr()
 sns.heatmap(corr, annot=True, cmap='coolwarm')
 plt.title('Correlation Matrix')
 plt.show()

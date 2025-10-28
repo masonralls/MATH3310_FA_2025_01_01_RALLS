@@ -25,8 +25,8 @@ y = df['murder_rate']
 X = df.drop(columns=['murder_rate', 'state'])
 
 # Identify column types (numeric vs categorical)
-
 numeric_features = selector(dtype_include=np.number)(X)
+
 # If 'region' is the only categorical, we can also do: categorical_features = ['region']
 categorical_features = [c for c in X.columns if c not in numeric_features]
 
@@ -51,6 +51,8 @@ pipe = Pipeline([
     ('preprocess', preprocess),
     ('lr', LinearRegression())
 ])
+
+pipe
 
 # Train/test split for
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

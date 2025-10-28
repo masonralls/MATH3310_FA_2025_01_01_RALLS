@@ -1,0 +1,19 @@
+GROUP ROLES:
+    Mason: Leader, rough draft author
+    Dunn: Coordinator, energy provider, editor
+    Anna: GitHub/CS help, scribe, debugger/refiner
+
+What do we believe we did well on this assignment?
+    As a team, we moved past copy-pasting code to understanding the goal behind each step. We identified the underlying principles and planned next steps without over-reliance on the example code. Mason’s expertise in statistical methods was especially invaluable. He guided our workflow, clarified concepts, and helped translate theory into clear analysis decisions for the group. He also taught us useful ideas that were not included in the project instructions.
+
+
+What was the most challenging part of this assignment?
+    The three of us have different levels of expertise in different domains. Mason's experience made the project seem easy because he helped translate the project into digestible concepts, but some of the theory behind the project seemed unnavigable at first. It was also difficult to work around different schedules to find time to meet up and discuss the project.
+
+
+What would have made this assignment a better experience?
+    If we had a better understanding of the foundational concepts of the project before jumping into the minutiae of the code, the experience may have been a bit better. Perhaps if there had been two mini projects and the first had not involved coding, the concepts behind the code would have been more accessible.
+
+
+What do we need help with?
+    We could all use a bit more practice with the coding and becoming used to the libraries. Additionally, we could use some reinforcement with the theory behind this project. Small practice in-class labs to help refresh previously learned principles could be helpful for us. 

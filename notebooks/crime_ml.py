@@ -120,3 +120,10 @@ n = X.shape[0]  # number of samples
 p = X.shape[1]  # number of features
 adj_r2 = 1 - (1 - scores.mean()) * (n - 1) / (n - p - 1)
 print(f"\nAdjusted R² : {adj_r2:.4f}")
+
+
+# interpret and compare the adjusted R² of both models
+
+# The adjusted R² for the train-test split model is slightly lower than the R², indicating that some predictors may not be contributing significantly to the model.
+# In contrast, the adjusted R² for the cross-validation model is much smaller but more stable, reflecting its robustness across different subsets of the data.
+# Overall, the cross-validation model may be preferred for its generalizability to unseen data as it is much more trustworthy for predictive performance.

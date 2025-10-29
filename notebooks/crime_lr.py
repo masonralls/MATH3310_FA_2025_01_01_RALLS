@@ -74,6 +74,13 @@ p = 5  # number of predictors in best_model (poverty, high_school, single_parent
 adj_r2 = 1 - (1 - best_model.rsquared) * (n - 1) / (n - p - 1)
 print(f"Model Adjusted R^2 score: {adj_r2:.4f}")
 
+# interpret the adjusted R^2
+
+# The adjusted R^2 score accounts for the number of predictors in the model and penalizes for adding non-significant predictors.
+# A higher adjusted R^2 indicates a better fit, while a lower value suggests that the model may be overfitting.
+# In this case, the adjusted R^2 is slightly lower than the R^2, which is expected when accounting for the number of predictors.
+# Overall, the model explains a significant portion of the variance in the murder rate.
+
 # test for correlation between predictors
 corr = df[[ 'poverty', 'high_school', 'single_parent', 'unemployed', 'metropolitan']].corr()
 sns.heatmap(corr, annot=True, cmap='coolwarm')

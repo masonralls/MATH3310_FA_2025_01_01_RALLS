@@ -12,8 +12,7 @@ from sklearn.metrics import r2_score
 
 
 # load the dataset
-path = "C:\\Users\\mason\\OneDrive\\Desktop\\MATH_3310\\project_1_crime\\MATH3310_FA_2025_01_01_RALLS\\data\\raw\\crime.csv"
-df = pd.read_csv(path)
+df = pd.read_csv("../data/raw/crime.csv")
 
 # Check for missing values
 print(df.isnull().sum())

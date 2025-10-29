@@ -7,8 +7,7 @@ from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
 
 # load the dataset
-path = "C:\\Users\\mason\\OneDrive\\Desktop\\MATH_3310\\project_1_crime\\MATH3310_FA_2025_01_01_RALLS\\data\\raw\\crime.csv"
-df = pd.read_csv(path)
+df = pd.read_csv("../data/raw/crime.csv")
 df.head()
 
 # Check for missing values
